@@ -34,4 +34,14 @@
 		align-items: center;
 		flex-direction: column;
 	}
+
+	iframe {
+		max-width: 85vw;
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 1.5rem
+		}
+	}
 </style>
