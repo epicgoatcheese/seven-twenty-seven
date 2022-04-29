@@ -49,9 +49,23 @@
 		color: rgb(179, 0, 0);
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 425px) {
 		h1 {
 			font-size: 1.5rem;
+		}
+
+		h3 {
+			font-size: 0.9rem;
+		}
+	}
+
+	@media (max-width: 325px) {
+		h1 {
+			font-size: 1.25rem;
+		}
+
+		h3 {
+			font-size: 0.8rem;
 		}
 	}
 </style>
