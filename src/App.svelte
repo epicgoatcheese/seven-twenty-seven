@@ -1,5 +1,6 @@
 <script>
-	export let funny = false;
+	let funny = false;
+	let funnyButton = 0;
 
 	const funnyTime = {
 		hours: 19,
@@ -17,12 +18,13 @@
 </script>
 
 <div class="wrapper">
-	{#if !funny}
-		<h1>It is currently not 7:27 PM :(</h1>
-		<h2>Come back at 7:27 PM</h2>
-	{:else}
-		<h1>It is currently 7:27 PM</h1>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h1>It is currently not 7:27 PM :(</h1>
+	<h3>Click this button in the meantime <strong>(O̯͓ͣ͂͟r̻̋̂ͬ͋ͧ ͓̻ͫͬ͐͛̀e̬̪̞͍̬͙͖ͪ̓̉̍̐̀ͨ̕l̪̮̺̰̬̤̪ͩ̋͑̋ͫ̇s̻͑̌̀̍̚͜e͔̞̫͍͟.͓̜̣̦̲̺ͩ̌̈.̼̗̓ͯ̓̂̑̃͢.̼͑̽̃͒̉̑̿̀)</strong></h3>
+	<button on:click={() => funnyButton++}>funny button {funnyButton}</button>
+	{#if funny}
+		<video src="armstrong.webm" autoplay muted={!funnyButton >= 1 || null}>
+			<track kind="captions">
+		</video>
 	{/if}
 </div>
 
@@ -35,13 +37,21 @@
 		flex-direction: column;
 	}
 
-	iframe {
-		max-width: 85vw;
+	video {
+		max-width: 95vw;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	strong {
+		color: rgb(179, 0, 0);
 	}
 
 	@media (max-width: 600px) {
 		h1 {
-			font-size: 1.5rem
+			font-size: 1.5rem;
 		}
 	}
 </style>
