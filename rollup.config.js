@@ -35,7 +35,7 @@ function serve() {
 export default {
   input: "src/main.js",
   output: {
-    sourcemap: false,
+    sourcemap: !production,
     format: "iife",
     name: "app",
     file: "public/build/bundle.js",
@@ -45,6 +45,7 @@ export default {
       compilerOptions: {
         // enable run-time checks when not in production
         dev: !production,
+        enableSourcemap: !production,
       },
     }),
     // we'll extract any component CSS out into
